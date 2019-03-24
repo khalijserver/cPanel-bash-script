@@ -4,3 +4,9 @@
 # khalijserver@ 
 # Website: www.khalijserver.com
 
+showMenu () {
+clear
+echo "khalijserver.com";
+
+
+
