@@ -78,9 +78,6 @@ case $yourch in
 
 
 cpanel ) date
-echo -e "Hi, please enter your desired hostname: \c "
-read hostname 
-hostname $hostname 
 cd /home
 yum install wget perl -y
 systemctl disable NetworkManager
