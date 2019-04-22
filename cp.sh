@@ -1,4 +1,3 @@
-
 #!/bin/bash
 #
 # Abdulhossein Alishah
@@ -63,6 +62,7 @@ echo " fixsuphp ------------ Fix permission issue for suPHP (Advanced users only
 echo " sqladmin ------------ Optimize MySQL Servers."
 echo " sqltuner ------------ Run MySQL Servers Tuner."
 echo " synctime ------------ Synchronize time on cPanel server."
+echo " telegram ------------ Telegram prerequisites for centos."
 echo " ";
 echo " exit ---------- Leave" 
 echo " ";
@@ -116,6 +116,18 @@ showMenu
 
 synctime ) date
 rdate -s rdate.cpanel.net
+showMenu
+;;
+
+telegram ) date
+git clone https://github.com/python-telegram-bot/python-telegram-bot --recursive
+cd python-telegram-bot
+python setup.py install
+git submodule update --init --recursive 
+
+curl -sS https://getcomposer.org/installer | php
+php composer.phar require irazasyed/telegram-bot-sdk ^2.0
+composer require irazasyed/telegram-bot-sdk ^2.0
 showMenu
 ;;
 
